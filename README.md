@@ -95,10 +95,10 @@ Seuraavaksi otetaan hostilla etäyhteys luomaamme koneeseen:
 
 Sisällä ollaan! Tehdään tällä kertaa vain nopea testaus, onnistuuko päivittäminen ja poistutaan virtuaalikoneesta.
 
+<img width="449" alt="image" src="https://user-images.githubusercontent.com/117899949/205612214-138219d5-a029-4d4d-8a83-0933c0f1cf31.png">
+
     sudo apt-get update
     exit
-
-<img width="449" alt="image" src="https://user-images.githubusercontent.com/117899949/205612214-138219d5-a029-4d4d-8a83-0933c0f1cf31.png">
     
 Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
 
