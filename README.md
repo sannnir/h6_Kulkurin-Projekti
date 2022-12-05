@@ -77,8 +77,9 @@ Sisällä ollaan! Tehdään tällä kertaa vain nopea testaus, onnistuuko päivi
     sudo apt-get update
     exit
 
+<img width="449" alt="image" src="https://user-images.githubusercontent.com/117899949/205612214-138219d5-a029-4d4d-8a83-0933c0f1cf31.png">
+    
 Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
-(EDIT: unohdin ottaa kuvan tästä, jonka vuoksi puuttuu todiste siitä, että homma tosiaankin toimi)
 
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604040-5b713db3-8705-4056-84ac-7d64d33b8292.png">
 
