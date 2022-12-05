@@ -5,7 +5,7 @@
 Työympäristön host-koneena: Microsoft Windows 11 Home-käyttöjärjestelmä (versio 10.0.22621).
 Lisäksi käytössä on ollut myös Virtual Box (Versio 6.1), jota hyödynnetään tehtävissä.
 
-Kurssikuvaus ja tarkemmat tehtävänannot löytyvät [täältä](https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/)
+Kurssikuvaus ja tarkemmat tehtävänannot löytyvät [täältä](https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/). 
 Tehtävät on tehty joulukuussa 2022 ja tehtävän tekemisessä on hyödynnetty luennolla tehtyjä muistiinpanoja sekä muita lähteitä, jotka on merkitty loppuun. 
 Luennon piti Tero Karvinen (1.12.2022) ja se oli kurssin kuudes luento, jonka aiheena oli "Pakettivarastot". Luennolla käytiin läpi Vagrant:ia sekä Salt herra-orja -arkkitehtuuria kahden virtuaalikoneen välillä.
 Tehtävät on kirjoitettu Windows-koneelle ladattuun Git:iin (versio: 2.38.1.windows.1). 
