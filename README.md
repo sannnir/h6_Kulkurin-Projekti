@@ -52,6 +52,7 @@ Tässä esimerkissä aiomme käyttää "debian/bullseye64"-nimistä boxia, joka 
 Windowsissa Vagrant toimii PowerShellillä. (Vagrant 2022.)
 
 Lähtötilanne VirtualBoxissa:
+
 <img width="553" alt="lahtotilanne" src="https://user-images.githubusercontent.com/117899949/205604005-6d45e3f8-150b-4b60-9ddd-47cb252f4627.png">
 
 Luodaan ensin tyhjä kansio ja siirrytään sinne
