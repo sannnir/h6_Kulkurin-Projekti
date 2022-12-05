@@ -60,14 +60,15 @@ Luodaan ensin tyhjä kansio ja siirrytään sinne
     mkdir vms
     cd vms
 
-Ajetaan Debian Vagrantilla "vagrant init <boxin nimi>, jonka jälkeen käynnistetään virtuaalikoneen luominen:
+Luodaan Debian 11 varustettu virtuaalikone Vagrantilla "vagrant init <boxin nimi>, jonka jälkeen käynnistetään virtuaalikone 'vagrant up'-komennolla:
 
     vagrant init debian/bullseye64
     vagrant up
 
 <img width="737" alt="2" src="https://user-images.githubusercontent.com/117899949/205603956-18bc2227-12d1-49f7-b88d-d604d8e101b1.png">
 
-Virtuaalikone on melko nopeasti valmis, jonka jälkeen voidaan ottaa hostilla etäyhteys luomaamme koneeseen:
+Virtuaalikone tuli todella nopeasti (taikuutta?). 
+Seuraavaksi otetaan hostilla etäyhteys luomaamme koneeseen:
 
     vagrant ssh
 
@@ -77,6 +78,7 @@ Sisällä ollaan! Tehdään tällä kertaa vain nopea testaus, onnistuuko päivi
     exit
 
 Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
+(EDIT: unohdin ottaa kuvan tästä, jonka vuoksi puuttuu todiste siitä, että homma tosiaankin toimi)
 
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604040-5b713db3-8705-4056-84ac-7d64d33b8292.png">
 
