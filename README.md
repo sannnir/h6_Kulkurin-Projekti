@@ -5,6 +5,7 @@
 Työympäristön host-koneena: Microsoft Windows 11 Home-käyttöjärjestelmä (versio 10.0.22621).
 Lisäksi käytössä on ollut myös Virtual Box (Versio 6.1), jota hyödynnetään tehtävissä.
 
+Kurssikuvaus ja tarkemmat tehtävänannot löytyvät [täältä](https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/)
 Tehtävät on tehty joulukuussa 2022 ja tehtävän tekemisessä on hyödynnetty luennolla tehtyjä muistiinpanoja sekä muita lähteitä, jotka on merkitty loppuun. 
 Luennon piti Tero Karvinen (1.12.2022) ja se oli kurssin kuudes luento, jonka aiheena oli "Pakettivarastot". Luennolla käytiin läpi Vagrant:ia sekä Salt herra-orja -arkkitehtuuria kahden virtuaalikoneen välillä.
 Tehtävät on kirjoitettu Windows-koneelle ladattuun Git:iin (versio: 2.38.1.windows.1). 
@@ -22,11 +23,11 @@ Tehtävät on kirjoitettu Windows-koneelle ladattuun Git:iin (versio: 2.38.1.win
 Vagrant on ohjelma, jolla pystyy luomaan useita virtuaalikoneita heposti ja nopeasti.
 Se on avoimen lähdekoodin ohjelmisto virtualisoitujen kehitysympäristöjen luomiseen ja hallintaan.
 Vagrant tukee VirtualBoxia, joka toimii puolestaan Hypervisorina luodessaan virtuaalikoneita.
-Lisäksi se tukee Windows-, Linux, sekä MacOS-pohjaisia käyttöjärjestelmiä.
+Lisäksi se tukee Windows-, Linux, sekä MacOS-pohjaisia käyttöjärjestelmiä. (Hashicorp 2022.)
 
 Vagrantin käyttämiseen tarvitaan siis Vagrant sekä Hypervisor - kuten VirtualBox.
 Vagrant kannattaa asentaa omalle host-koneelle, jonka kautta hallinnoi muita virtuaalikoneita.
-Koska oman host-koneeni käyttöjärjestelmä on Microsoft Windows 11 Home, asensin Vagrantin sille käyttikselle.
+Koska oman host-koneeni käyttöjärjestelmä on Microsoft Windows 11 Home, asensin Vagrantin sille käyttikselle. (Karvinen 2022.)
 
 ### Vagrantin asennus
 
@@ -201,3 +202,18 @@ Vastaus tuli:
 
 
 ## d) Oma suola. Tee ensimmäinen työversio projektistasi. Miniprojektilla tulee olla jokin tarkoitus, vaikka se olisi keksitty. Projektilla tulee olla sivu (esim. Github, Gitlab...), josta selviää projektin perustiedot. Toiminnallisuutta tulee olla kokeiltu, mutta sen ei tarvitse olla valmis. Valmiit projektit esitellään viimeisellä tapaamiskerralla. Tässä tehtävässä palautettava työversio ei siis ole vielä lopullinen.
+
+*******
+    
+### LÄHTEET:
+
+Hashicorp 2022. Vagrant Luettavissa: https://github.com/hashicorp/vagrant. Luettu: 5.12.2022
+    
+Tero Karvinen 2017. Vagrant Revisited – Install & Boot New Virtual Machine in 31 seconds. Luettavissa: https://terokarvinen.com/2017/04/11/vagrant-revisited-install-boot-new-virtual-machine-in-31-seconds/. Luettu: 5.12.2022
+    
+Tero Karvinen 2018. Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux. Luettavissa: https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/. Luettu: 5.12.2022
+    
+Tero Karvinen 2021. Two Machine Virtual Network With Debian 11 Bullseye and Vagrant Luettavissa: https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/. Luettu: 5.12.2022
+    
+Tero Karvinen 2022. Configuration Management Systems - Palvelinten Hallinta. Luettavissa: https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/. Luettu: 4.12.2022
+    
