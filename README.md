@@ -97,6 +97,7 @@ Tiedostossa siis määritellään Vagrantille, että luodaan kaksi virtuaalikone
 Käyttöjärjestelmänä Debian 11 (box: Debian/bullseye64). (Karvinen 2021.)
 
 alkutilanne:
+    
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604079-17efcae2-6d87-4fd1-9904-6d44df8e22c5.png">
 
 Ensin luodaan isanta-kone ja sen jälkeen renki1-kone.
