@@ -49,7 +49,7 @@ Suoritin Vagrantin asennuksen, jonka jälkeen pystyttiin aloittamaan Vagrantin k
 Vagrantissa idea on ns. napata boxeja. Boxit ovat ns. VMimageja, joita voi kloonata omaan virtuaaliympäristöönsä.
 Erilaisia boxeja löytyy mm. [täältä](https://app.vagrantup.com/boxes/search)
 Tässä esimerkissä aiomme käyttää "debian/bullseye64"-nimistä boxia, joka kloonaa Debian 11 käyttöjärjestelmällä asennetun virtuaalikoneen VirtualBoxiin.
-Windowsissa Vagrant toimii PowerShellillä.
+Windowsissa Vagrant toimii PowerShellillä. (Vagrant 2022.)
 
 Lähtötilanne VirtualBoxissa:
 <img width="553" alt="lahtotilanne" src="https://user-images.githubusercontent.com/117899949/205604005-6d45e3f8-150b-4b60-9ddd-47cb252f4627.png">
@@ -206,3 +206,5 @@ Tero Karvinen 2018. Salt Quickstart – Salt Stack Master and Slave on Ubuntu Li
 Tero Karvinen 2021. Two Machine Virtual Network With Debian 11 Bullseye and Vagrant Luettavissa: https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/. Luettu: 5.12.2022
     
 Tero Karvinen 2022. Configuration Management Systems - Palvelinten Hallinta. Luettavissa: https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/. Luettu: 4.12.2022
+    
+Vagrant 2022. Install and Specify a Box. Luettavissa: https://developer.hashicorp.com/vagrant/tutorials/getting-started/getting-started-boxes. Luettu: 5.12.2022
