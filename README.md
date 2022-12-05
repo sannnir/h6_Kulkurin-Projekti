@@ -32,7 +32,7 @@ Koska oman host-koneeni käyttöjärjestelmä on Microsoft Windows 11 Home, asen
 ### Vagrantin asennus
 
 Ladataan sopiva Vagrant-tiedosto. 
-Itse latasin version nimeltä: AMD64 (Versio 2.3.3)
+Itse latasin version nimeltä: AMD64 (Versio 2.3.3). 
 Tiedosto löytyi [täältä](https://developer.hashicorp.com/vagrant/downloads).
 
 Tämän jälkeen avasin Powershellin "run as a administrator" ja avasin ladatun tiedoston downloads-kansiosta.
