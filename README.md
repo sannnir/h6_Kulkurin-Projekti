@@ -1,5 +1,16 @@
 # h6_Kulkurin-Projekti
 
+### Työympäristö
+
+Työympäristön host-koneena: Microsoft Windows 11 Home-käyttöjärjestelmä (versio 10.0.22621).
+Lisäksi käytössä on ollut myös Virtual Box (Versio 6.1), jota hyödynnetään tehtävissä.
+
+Tehtävät on tehty joulukuussa 2022 ja tehtävän tekemisessä on hyödynnetty luennolla tehtyjä muistiinpanoja sekä muita lähteitä, jotka on merkitty loppuun. 
+Luennon piti Tero Karvinen (1.12.2022) ja se oli kurssin kuudes luento, jonka aiheena oli "Pakettivarastot". Luennolla käytiin läpi Vagrant:ia sekä Master-slave arkkitehtuuria kahden virtuaalikoneen välillä.
+Tehtävät on kirjoitettu Windows-koneelle ladattuun Git:iin (versio: 2.38.1.windows.1). 
+
+### TEHTÄVÄT
+
 ## x) Lue ja tiivistä (muutamalla ranskalaisella viivalla per artikkeli, poimi esim itsellesi keskeisimmät komennot)
 
 - Karvinen 2017: Vagrant Revisited – Install & Boot New Virtual Machine in 31 seconds (Suosittelen käyttämään tässä koneena 'vagrant init debian/bullseye64')
@@ -28,7 +39,8 @@ Tämän jälkeen avasin Powershellin "run as a administrator" ja avasin ladatun 
     cd C:/Users/sanni/Downloads>
     ./vagrant_2.3.3_windows_amd64.msi
 
-KUVA 1
+<img width="372" alt="1" src="https://user-images.githubusercontent.com/117899949/205603922-dc1a52a4-6796-4e10-9dd3-71dc540efa10.png">
+
 
 Suoritin Vagrantin asennuksen, jonka jälkeen pystyttiin aloittamaan Vagrantin käyttö.
 
@@ -40,7 +52,8 @@ Tässä esimerkissä aiomme käyttää "debian/bullseye64"-nimistä boxia, joka 
 Windowsissa Vagrant toimii PowerShellillä.
 
 Lähtötilanne VirtualBoxissa:
-LÄHTOTILANNE KUVA
+<img width="553" alt="lahtotilanne" src="https://user-images.githubusercontent.com/117899949/205604005-6d45e3f8-150b-4b60-9ddd-47cb252f4627.png">
+
 
 Luodaan ensin tyhjä kansio ja siirrytään sinne
 
@@ -52,7 +65,8 @@ Ajetaan Debian Vagrantilla "vagrant init <boxin nimi>, jonka jälkeen käynniste
     vagrant init debian/bullseye64
     vagrant up
 
-KUVA 2
+<img width="737" alt="2" src="https://user-images.githubusercontent.com/117899949/205603956-18bc2227-12d1-49f7-b88d-d604d8e101b1.png">
+
 
 Virtuaalikone on melko nopeasti valmis, jonka jälkeen voidaan ottaa hostilla etäyhteys luomaamme koneeseen:
 
@@ -65,11 +79,125 @@ Sisällä ollaan! Tehdään tällä kertaa vain nopea testaus, onnistuuko päivi
 
 Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
 
-LOPPUTILANNE KUVA
+<img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604040-5b713db3-8705-4056-84ac-7d64d33b8292.png">
 
 
 ## b) Yksityisverkko. Asenna kaksi virtuaalikonetta samaan verkkoon Vagrantilla. Laita toisen koneen nimeksi "isanta" ja toisen "renki1". Kokeile, että "renki1" saa yhteyden koneeseen "isanta" (esim. ping tai nc). Tehtävä tulee siis tehdä alusta, vaikka olisit ehtinyt kokeilla tätä tunnilla.
 
+Tehtävään soveltuvat ohjeistukset löytyvät [täältä](https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/).
+Koska Vagrant asennettiin kohdassa a, voimme siirtyä suoraan tiedoston luomiseen, jossa määritellään kahden virtuaalikoneen speksit.
+Kun tiedosto on valmis, voidaan ajaa tiedosto Vagrantilla 'vagrant init <tiedoston nimi>' ja 'vagrant up', jotta saadaan homma käynnistymään.
+Tärkeintä onkin, että tiedoston luomisessa speksit on kunnossa ja määritelty oikein, sillä teoriassa homman pitäisi olla helppoa ja nopeaa.
+
+Aloitetaan menemällä aiemmin luotuun 'vms' kansioon ja luodaan sinne VagrantFile-niminen tiedosto.
+Käytän itse notepadia.
+Kopion Tero Karvisen luoman tiedostopohjan ja muutan nimet tehtävänannon mukaan isannaksi ja renki1:seksi.
+Tiedostossa siis määritellään Vagrantille, että luodaan kaksi virtuaalikonetta.
+Käyttöjärjestelmänä Debian 11 (box: Debian/bullseye64).
+
+alkutilanne:
+<img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604079-17efcae2-6d87-4fd1-9904-6d44df8e22c5.png">
+
+
+Ensin luodaan isanta-kone ja sen jälkeen renki1-kone.
+Tallennetaan tiedosto ja ajetaan komennot.
+
+<img width="890" alt="4" src="https://user-images.githubusercontent.com/117899949/205604102-01d3fea8-0859-4024-a8df-0f56f93208a2.png">
+
+    vagrant init Vagrantfile
+    
+Tulee errorviesti, joka viittaa, että line 19 on jokin virhe. Avataan tiedosto uudelleen ja tarkistetaan.
+
+<img width="389" alt="6_error" src="https://user-images.githubusercontent.com/117899949/205604145-fb2aaeea-3fe1-47c2-bcad-4c1121cc2e40.png">
+
+
+Näyttää siltä, että olin muokkaillut virtuaalikoneiden nimiä hieman liian innokkaasti, ja isanta/renki1 nimet olivat lipsahtaneet liian moneen paikkaan.
+Pieni fiksaus tiedostoon ja uusi yritys.
+
+<img width="464" alt="7" src="https://user-images.githubusercontent.com/117899949/205604175-4d034a0c-990f-4e59-8bb8-9531f6be7670.png">
+
+    vagrant init Vagrantfile
+    vagrant up
+
+Nyt toimii ja molemmat virtuaalikoneet pyörähti käyntiin
+
+<img width="832" alt="8" src="https://user-images.githubusercontent.com/117899949/205604199-fb1fbf0b-1464-479e-9bf9-a123d27c1c54.png">
+
+
+Seuraavaksi kokeillaan, että yhteys näiden kahden välillä toimii, sillä muutoin salt masterin ja minionin asennus on turhaa.
+Tehtään ping-testi.
+
+    vagrant ssh isanta
+    ip addr
+    exit
+
+Kopsataan isannan ip-osoite.
+
+    vagrant ssh renki
+    ping <isannan ip-osoite>
+    
+<img width="382" alt="9" src="https://user-images.githubusercontent.com/117899949/205604220-c09fba43-0523-45a6-84f7-a84d5243b544.png">
+
+Pingaus toimii, eli yhteys kahden koneen välillä toimii.
+
+
 ## c) Salt master-slave. Toteuta Salt master-slave -arkkitehtuuri verkon yli. Aseta edellisen kohdan kone renki1 orjaksi koneelle isanta.
+
+Avataan ssh-yhteys Powershellillä masterille. Tämän voisi tehdä niin, että avaa virtualboxissa molemmat virtuaalikoneet, mutta laiskuus iski, ja teen koko homman powershellillä.
+
+    vagrant ssh isanta
+    sudo apt-get install salt-master
+    sudo systemctl restart salt-master.service
+
+Tarkistetaan, mitä portteja isanta kuuntelee. 
+4504 sekä 4506 näyttää olevan avoinna.
+
+<img width="677" alt="10" src="https://user-images.githubusercontent.com/117899949/205604288-8e8b2b3d-0d6d-4aec-b235-60f4da700d3d.png">
+
+    exit
+
+Ja siirrytään renki1-koneeseen 'vagrant ssh renki1'. Tehdään myös renki1 koneessa ensin päivitykset ennen Saltin-minionin asennusta.
+Kurkataan kuitenkin ensin, että myös renki1-koneessa on halutut portit 4504 sekä 4506 auki.
+Asennan netcatin 'sudo apt-get installe netcat' ja testataan, onko renki1:sellä halutut portit auki.
+
+    nc -nvz  192.168.88.101 4505
+
+Tämä ok.
+
+<img width="323" alt="11" src="https://user-images.githubusercontent.com/117899949/205604367-10e5d877-f544-42f5-b880-e71ed40bb5f7.png">
+
+
+Sitten aloitetaan Salt-minionin asennus.
+
+    sudo apt-get install salt-minion
+    sudo systemctl restart salt-minion.service  
+
+Sitten määritetään minionille isanta-ip avaamalla minion tiedosto salt-kansiosta.
+
+    sudoedit /etc/salt/minion
+
+<img width="462" alt="12" src="https://user-images.githubusercontent.com/117899949/205604413-ee92efd7-65e5-4bc5-b740-6cc4977835ae.png">
+
+    exit
+
+Tämän jälkeen siirrytään hyväksymään isannalla uudet avaimet. Siirrytään vagrantilla taas isanta-koneelle
+ja kurkataan odottavat avaimet 'sudo salt-key', joka oli kohdallani tyhjä.
+Pienen pään rapsuttelun jälkeen muistin, että salttia olisi pitänyt potkaista minion-dokkarin muokkauksen jälkeen, joten käyn tekemässä sen tässä välissä.
+Sitten uusi yritys. 
+
+<img width="248" alt="13" src="https://user-images.githubusercontent.com/117899949/205604438-e24f24f4-c96f-483a-ae14-ab16316fd278.png">
+
+Nyt näyttää paremmalta. Hyväksytään avaimet:
+
+    sudo salt-key -A
+
+Sitten on vuorossa vielä testi. Kokeillaan, jutteleeko renki isannalle, kun annetaan orjille salt-state:
+
+    sudo salt '*' cmd.run *hostname*
+
+Vastaus tuli: 
+
+<img width="344" alt="14" src="https://user-images.githubusercontent.com/117899949/205604473-dd801932-322a-494a-a314-54a629db24cb.png">
+
 
 ## d) Oma suola. Tee ensimmäinen työversio projektistasi. Miniprojektilla tulee olla jokin tarkoitus, vaikka se olisi keksitty. Projektilla tulee olla sivu (esim. Github, Gitlab...), josta selviää projektin perustiedot. Toiminnallisuutta tulee olla kokeiltu, mutta sen ei tarvitse olla valmis. Valmiit projektit esitellään viimeisellä tapaamiskerralla. Tässä tehtävässä palautettava työversio ei siis ole vielä lopullinen.
