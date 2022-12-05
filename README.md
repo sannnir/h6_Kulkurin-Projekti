@@ -85,13 +85,13 @@ Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
 Tehtävään soveltuvat ohjeistukset löytyvät [täältä](https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/).
 Koska Vagrant asennettiin kohdassa a, voimme siirtyä suoraan tiedoston luomiseen, jossa määritellään kahden virtuaalikoneen speksit.
 Kun tiedosto on valmis, voidaan ajaa tiedosto Vagrantilla 'vagrant init <tiedoston nimi>' ja 'vagrant up', jotta saadaan homma käynnistymään.
-Tärkeintä onkin, että tiedoston luomisessa speksit on kunnossa ja määritelty oikein, sillä teoriassa homman pitäisi olla helppoa ja nopeaa.
+Tärkeintä onkin, että tiedoston luomisessa speksit on kunnossa ja määritelty oikein, sillä teoriassa homman pitäisi olla helppoa ja nopeaa. (Karvinen 2021.)
 
 Aloitetaan menemällä aiemmin luotuun 'vms' kansioon ja luodaan sinne VagrantFile-niminen tiedosto.
 Käytän itse notepadia.
 Kopion Tero Karvisen luoman tiedostopohjan ja muutan nimet tehtävänannon mukaan isannaksi ja renki1:seksi.
 Tiedostossa siis määritellään Vagrantille, että luodaan kaksi virtuaalikonetta.
-Käyttöjärjestelmänä Debian 11 (box: Debian/bullseye64).
+Käyttöjärjestelmänä Debian 11 (box: Debian/bullseye64). (Karvinen 2021.)
 
 alkutilanne:
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604079-17efcae2-6d87-4fd1-9904-6d44df8e22c5.png">
