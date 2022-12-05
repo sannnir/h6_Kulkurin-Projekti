@@ -14,9 +14,30 @@ Tehtävät on kirjoitettu Windows-koneelle ladattuun Git:iin (versio: 2.38.1.win
 
 ## x) Lue ja tiivistä (muutamalla ranskalaisella viivalla per artikkeli, poimi esim itsellesi keskeisimmät komennot)
 
-- Karvinen 2017: Vagrant Revisited – Install & Boot New Virtual Machine in 31 seconds (Suosittelen käyttämään tässä koneena 'vagrant init debian/bullseye64')
-- Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant
-- Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux
+**- Karvinen 2017: Vagrant Revisited – Install & Boot New Virtual Machine in 31 seconds (Suosittelen käyttämään tässä koneena 'vagrant init debian/bullseye64')**
+
+Artikkelissa kerrotaan, kuinka Vagrantin avulla virtuaalikoneen luominen tapahtuu jopa 31 sekunnissa. Arkitteli sisältää komennot uuden vkoneen luomiseen sekä ssh yhteyden muodostamiseen.
+
+    vagrant init <boxin tiedoston nimi>
+    vagrant up
+    vagrant ssh
+
+Luodun virtuaalikoneen tuhoaminen käy yhtä näppärästi komennolla `vagrant destroy`.
+
+**- Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant**
+
+Artikkelissa kerrotaan, kuinka useiden virtuaalikoneiden luominen onnistuu yhdellä kertaa. 
+Esimerkissä ohjeistetaan kahden koneen luomiseen Vagrantfile- nimisen tiedoston avulla.
+Sieltä löytyy myös Vagrantfilen-sisältö esimerkki, jonka avulla saa luotua tiedoston oikein.
+Kun virtuaalikoneet on ylhäällä, artikkeli ohjeistaa myös ssh-yhteyden luomisessa sekä yhteyden toimimisen tarkistamisessa. Lopussa on myös Destroy-ohjeet luoduille virtuaalikoneille.
+
+
+**- Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux**
+
+Artikkeli ohjeistaa Salt masterin ja Salt minionin luomisessa, joka on hyödyllistä, kun luodaan virtuaalikoneita, joissa halutaan opetella käyttämään Salt:tia herra-orja -arkkitehtuurissa.
+
+Artikkelissa käydään step-by-step tyylisesti läpi, kuinka Saltin asennuksessa edetään: master, minion, salt-keys, testi. Lopussa kerrataan muutamia komentoja, joita voi testata orjilla ja tarkistaa, toimiiko luotu arkkitehti oikein omassa virtuaaliympäristössä.
+
 
 ## a) Hello Vagrant. Asenna virtuaalikone Vagrantilla.
 
