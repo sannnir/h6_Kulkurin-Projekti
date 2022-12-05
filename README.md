@@ -220,6 +220,8 @@ Vastaus tuli:
 <img width="344" alt="14" src="https://user-images.githubusercontent.com/117899949/205604473-dd801932-322a-494a-a314-54a629db24cb.png">
 
 
+## d) Oma suola projekti aloitettu täällä: https://github.com/sannnir/Project-My-own-Salt-state/blob/main/README.md
+
 *******
     
 ### LÄHTEET:
