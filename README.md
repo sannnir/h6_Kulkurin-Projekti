@@ -32,8 +32,8 @@ Koska oman host-koneeni käyttöjärjestelmä on Microsoft Windows 11 Home, asen
 ### Vagrantin asennus
 
 Ladataan sopiva Vagrant-tiedosto. 
-Ise latasin version nimeltä: AMD64 (Versio 2.3.3)
-Tiedosto löytyi [täältä](https://developer.hashicorp.com/vagrant/downloads)
+Itse latasin version nimeltä: AMD64 (Versio 2.3.3)
+Tiedosto löytyi [täältä](https://developer.hashicorp.com/vagrant/downloads).
 
 Tämän jälkeen avasin Powershellin "run as a administrator" ja avasin ladatun tiedoston downloads-kansiosta.
 
@@ -41,7 +41,6 @@ Tämän jälkeen avasin Powershellin "run as a administrator" ja avasin ladatun 
     ./vagrant_2.3.3_windows_amd64.msi
 
 <img width="372" alt="1" src="https://user-images.githubusercontent.com/117899949/205603922-dc1a52a4-6796-4e10-9dd3-71dc540efa10.png">
-
 
 Suoritin Vagrantin asennuksen, jonka jälkeen pystyttiin aloittamaan Vagrantin käyttö.
 
@@ -55,7 +54,6 @@ Windowsissa Vagrant toimii PowerShellillä.
 Lähtötilanne VirtualBoxissa:
 <img width="553" alt="lahtotilanne" src="https://user-images.githubusercontent.com/117899949/205604005-6d45e3f8-150b-4b60-9ddd-47cb252f4627.png">
 
-
 Luodaan ensin tyhjä kansio ja siirrytään sinne
 
     mkdir vms
@@ -67,7 +65,6 @@ Ajetaan Debian Vagrantilla "vagrant init <boxin nimi>, jonka jälkeen käynniste
     vagrant up
 
 <img width="737" alt="2" src="https://user-images.githubusercontent.com/117899949/205603956-18bc2227-12d1-49f7-b88d-d604d8e101b1.png">
-
 
 Virtuaalikone on melko nopeasti valmis, jonka jälkeen voidaan ottaa hostilla etäyhteys luomaamme koneeseen:
 
@@ -81,7 +78,6 @@ Sisällä ollaan! Tehdään tällä kertaa vain nopea testaus, onnistuuko päivi
 Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
 
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604040-5b713db3-8705-4056-84ac-7d64d33b8292.png">
-
 
 ## b) Yksityisverkko. Asenna kaksi virtuaalikonetta samaan verkkoon Vagrantilla. Laita toisen koneen nimeksi "isanta" ja toisen "renki1". Kokeile, että "renki1" saa yhteyden koneeseen "isanta" (esim. ping tai nc). Tehtävä tulee siis tehdä alusta, vaikka olisit ehtinyt kokeilla tätä tunnilla.
 
@@ -99,7 +95,6 @@ Käyttöjärjestelmänä Debian 11 (box: Debian/bullseye64).
 alkutilanne:
 <img width="560" alt="LOPPUTIlANNE" src="https://user-images.githubusercontent.com/117899949/205604079-17efcae2-6d87-4fd1-9904-6d44df8e22c5.png">
 
-
 Ensin luodaan isanta-kone ja sen jälkeen renki1-kone.
 Tallennetaan tiedosto ja ajetaan komennot.
 
@@ -110,7 +105,6 @@ Tallennetaan tiedosto ja ajetaan komennot.
 Tulee errorviesti, joka viittaa, että line 19 on jokin virhe. Avataan tiedosto uudelleen ja tarkistetaan.
 
 <img width="389" alt="6_error" src="https://user-images.githubusercontent.com/117899949/205604145-fb2aaeea-3fe1-47c2-bcad-4c1121cc2e40.png">
-
 
 Näyttää siltä, että olin muokkaillut virtuaalikoneiden nimiä hieman liian innokkaasti, ja isanta/renki1 nimet olivat lipsahtaneet liian moneen paikkaan.
 Pieni fiksaus tiedostoon ja uusi yritys.
@@ -123,7 +117,6 @@ Pieni fiksaus tiedostoon ja uusi yritys.
 Nyt toimii ja molemmat virtuaalikoneet pyörähti käyntiin
 
 <img width="832" alt="8" src="https://user-images.githubusercontent.com/117899949/205604199-fb1fbf0b-1464-479e-9bf9-a123d27c1c54.png">
-
 
 Seuraavaksi kokeillaan, että yhteys näiden kahden välillä toimii, sillä muutoin salt masterin ja minionin asennus on turhaa.
 Tehtään ping-testi.
@@ -140,7 +133,6 @@ Kopsataan isannan ip-osoite.
 <img width="382" alt="9" src="https://user-images.githubusercontent.com/117899949/205604220-c09fba43-0523-45a6-84f7-a84d5243b544.png">
 
 Pingaus toimii, eli yhteys kahden koneen välillä toimii.
-
 
 ## c) Salt master-slave. Toteuta Salt master-slave -arkkitehtuuri verkon yli. Aseta edellisen kohdan kone renki1 orjaksi koneelle isanta.
 
@@ -166,7 +158,6 @@ Asennan netcatin 'sudo apt-get installe netcat' ja testataan, onko renki1:sellä
 Tämä ok.
 
 <img width="323" alt="11" src="https://user-images.githubusercontent.com/117899949/205604367-10e5d877-f544-42f5-b880-e71ed40bb5f7.png">
-
 
 Sitten aloitetaan Salt-minionin asennus.
 
@@ -200,7 +191,6 @@ Vastaus tuli:
 
 <img width="344" alt="14" src="https://user-images.githubusercontent.com/117899949/205604473-dd801932-322a-494a-a314-54a629db24cb.png">
 
-
 ## d) Oma suola. Tee ensimmäinen työversio projektistasi. Miniprojektilla tulee olla jokin tarkoitus, vaikka se olisi keksitty. Projektilla tulee olla sivu (esim. Github, Gitlab...), josta selviää projektin perustiedot. Toiminnallisuutta tulee olla kokeiltu, mutta sen ei tarvitse olla valmis. Valmiit projektit esitellään viimeisellä tapaamiskerralla. Tässä tehtävässä palautettava työversio ei siis ole vielä lopullinen.
 
 *******
@@ -216,4 +206,3 @@ Tero Karvinen 2018. Salt Quickstart – Salt Stack Master and Slave on Ubuntu Li
 Tero Karvinen 2021. Two Machine Virtual Network With Debian 11 Bullseye and Vagrant Luettavissa: https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/. Luettu: 5.12.2022
     
 Tero Karvinen 2022. Configuration Management Systems - Palvelinten Hallinta. Luettavissa: https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/. Luettu: 4.12.2022
-    
