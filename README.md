@@ -60,7 +60,7 @@ Luodaan ensin tyhjä kansio ja siirrytään sinne
     mkdir vms
     cd vms
 
-Luodaan Debian 11 varustettu virtuaalikone Vagrantilla "vagrant init <boxin nimi>, jonka jälkeen käynnistetään virtuaalikone 'vagrant up'-komennolla:
+Luodaan Debian 11 varustettu virtuaalikone Vagrantilla `vagrant init <boxin nimi>`, jonka jälkeen käynnistetään virtuaalikone `vagrant up`-komennolla:
 
     vagrant init debian/bullseye64
     vagrant up
@@ -87,10 +87,10 @@ Toimii! VirtualBoxissakin näyttää nyt olevan kaksi virtuaalikonetta.
 
 Tehtävään soveltuvat ohjeistukset löytyvät [täältä](https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/).
 Koska Vagrant asennettiin kohdassa a, voimme siirtyä suoraan tiedoston luomiseen, jossa määritellään kahden virtuaalikoneen speksit.
-Kun tiedosto on valmis, voidaan ajaa tiedosto Vagrantilla 'vagrant init <tiedoston nimi>' ja 'vagrant up', jotta saadaan homma käynnistymään.
+Kun tiedosto on valmis, voidaan ajaa tiedosto Vagrantilla `vagrant init <tiedoston nimi>` ja `vagrant up`, jotta saadaan homma käynnistymään.
 Tärkeintä onkin, että tiedoston luomisessa speksit on kunnossa ja määritelty oikein, sillä teoriassa homman pitäisi olla helppoa ja nopeaa. (Karvinen 2021.)
 
-Aloitetaan menemällä aiemmin luotuun 'vms' kansioon ja luodaan sinne VagrantFile-niminen tiedosto.
+Aloitetaan menemällä aiemmin luotuun `vms` kansioon ja luodaan sinne VagrantFile-niminen tiedosto.
 Käytän itse notepadia.
 Kopion Tero Karvisen luoman tiedostopohjan ja muutan nimet tehtävänannon mukaan isannaksi ja renki1:seksi.
 Tiedostossa siis määritellään Vagrantille, että luodaan kaksi virtuaalikonetta.
@@ -141,22 +141,24 @@ Pingaus toimii, eli yhteys kahden koneen välillä toimii.
 
 ## c) Salt master-slave. Toteuta Salt master-slave -arkkitehtuuri verkon yli. Aseta edellisen kohdan kone renki1 orjaksi koneelle isanta.
 
-Avataan ssh-yhteys Powershellillä masterille. Tämän voisi tehdä niin, että avaa virtualboxissa molemmat virtuaalikoneet, mutta laiskuus iski, ja teen koko homman powershellillä.
+Avataan ssh-yhteys Powershellillä masterille. Tämän voisi tehdä niin, että avaa virtualboxissa molemmat virtuaalikoneet, mutta laiskuus iski, ja teen koko homman PowerShellillä.
+
+Kun ollaan sisällä isanta-koneessa, tehdään ensin päivitykset (`sudo apt-get update` jne.), jonka jälkeen asennetaan salt-master ja potkaistaan ohjelma käyntiin:
 
     vagrant ssh isanta
     sudo apt-get install salt-master
     sudo systemctl restart salt-master.service
 
 Tarkistetaan, mitä portteja isanta kuuntelee. 
-4504 sekä 4506 näyttää olevan avoinna.
+`4504` sekä `4506` näyttää olevan avoinna.
 
 <img width="677" alt="10" src="https://user-images.githubusercontent.com/117899949/205604288-8e8b2b3d-0d6d-4aec-b235-60f4da700d3d.png">
 
     exit
 
-Ja siirrytään renki1-koneeseen 'vagrant ssh renki1'. Tehdään myös renki1 koneessa ensin päivitykset ennen Saltin-minionin asennusta.
+Ja siirrytään renki1-koneeseen `vagrant ssh renki1`. Tehdään myös renki1 koneessa ensin päivitykset ennen Saltin-minionin asennusta.
 Kurkataan kuitenkin ensin, että myös renki1-koneessa on halutut portit 4504 sekä 4506 auki.
-Asennan netcatin 'sudo apt-get installe netcat' ja testataan, onko renki1:sellä halutut portit auki.
+Asennan netcatin `sudo apt-get installe netcat` ja testataan, onko renki1:sellä halutut portit auki.
 
     nc -nvz  192.168.88.101 4505
 
@@ -178,7 +180,7 @@ Sitten määritetään minionille isanta-ip avaamalla minion tiedosto salt-kansi
     exit
 
 Tämän jälkeen siirrytään hyväksymään isannalla uudet avaimet. Siirrytään vagrantilla taas isanta-koneelle
-ja kurkataan odottavat avaimet 'sudo salt-key', joka oli kohdallani tyhjä.
+ja kurkataan odottavat avaimet `sudo salt-key`, joka oli kohdallani tyhjä.
 Pienen pään rapsuttelun jälkeen muistin, että salttia olisi pitänyt potkaista minion-dokkarin muokkauksen jälkeen, joten käyn tekemässä sen tässä välissä.
 Sitten uusi yritys. 
 
@@ -196,7 +198,6 @@ Vastaus tuli:
 
 <img width="344" alt="14" src="https://user-images.githubusercontent.com/117899949/205604473-dd801932-322a-494a-a314-54a629db24cb.png">
 
-## d) Oma suola. Tee ensimmäinen työversio projektistasi. Miniprojektilla tulee olla jokin tarkoitus, vaikka se olisi keksitty. Projektilla tulee olla sivu (esim. Github, Gitlab...), josta selviää projektin perustiedot. Toiminnallisuutta tulee olla kokeiltu, mutta sen ei tarvitse olla valmis. Valmiit projektit esitellään viimeisellä tapaamiskerralla. Tässä tehtävässä palautettava työversio ei siis ole vielä lopullinen.
 
 *******
     
